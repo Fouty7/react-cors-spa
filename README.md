@@ -4,6 +4,8 @@
 
 ## Getting started
 
+![453c9f12-bf2e-4709-98af-ce6d9d0ae052](https://user-images.githubusercontent.com/24654050/231484444-b5a6d52b-09c3-45eb-b2d4-ec4904989f5e.png)
+
 In the project directory, run the following command to install all modules:
 `npm install`
 
