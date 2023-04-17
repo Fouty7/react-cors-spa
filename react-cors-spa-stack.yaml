@@ -73,14 +73,18 @@ Resources:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: !Sub 'react-cors-spa-${SimpleAPI}'
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: ObjectWriter
       PublicAccessBlockConfiguration:
         BlockPublicAcls : true
         BlockPublicPolicy : true
         IgnorePublicAcls : true
-        RestrictPublicBuckets : true
+        RestrictPublicBuckets : false
       LoggingConfiguration:
         DestinationBucketName: !Ref LoggingBucket
         LogFilePrefix: s3-access-logs
+      #AccessControl: PublicReadWrite  
       VersioningConfiguration:
         Status: Enabled
       BucketEncryption:
@@ -114,12 +118,15 @@ Resources:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: !Sub 'react-cors-spa-${SimpleAPI}-logs'
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: ObjectWriter
       PublicAccessBlockConfiguration:
         BlockPublicAcls : true
         BlockPublicPolicy : true
         IgnorePublicAcls : true
-        RestrictPublicBuckets : true
-      AccessControl: LogDeliveryWrite
+        RestrictPublicBuckets : false
+      #AccessControl: PublicReadWrite
       VersioningConfiguration:
         Status: Enabled
       BucketEncryption:
