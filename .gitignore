@@ -29,7 +29,7 @@ lerna-debug.log*
 .yarn/install-state.gz
 
 # Build folders
-build/
+#build/
 
 # Local History for Visual Studio Code
 .history/
